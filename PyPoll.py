@@ -85,7 +85,14 @@ with open(file_to_load) as election_data:
                 winning_percentage = vote_percentage
                 # 3. Set the winning_candidate equal to the candidate's name.
                 winning_candidate = candidate_name
-            #print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+            
+            candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+
+            # Print each candidate, their voter count, and percentage to the terminal.
+            print(candidate_results)
+
+            # Save the candidate results to our text file
+            txt_file.write(candidate_results)
 
         winning_candidate_summary = (
                                      f"-------------------------\n"
@@ -94,7 +101,7 @@ with open(file_to_load) as election_data:
                                      f"Winning Percentage: {winning_percentage:.1f}%\n"
                                      f"-------------------------\n"
                                     )
-        #This is a comment
+
         #print(winning_candidate_summary)
 
 # Print the candidate vote dictionary
